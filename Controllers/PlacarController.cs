@@ -22,7 +22,7 @@ namespace Jogo.Controllers
         // GET: Placar
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Placar.Include(p => p.Jogador);
+            var applicationDbContext = _context.Placar.Include(p => p.Jogador).OrderByDescending(p => p.Pontos);
             return View(await applicationDbContext.ToListAsync());
         }
 
