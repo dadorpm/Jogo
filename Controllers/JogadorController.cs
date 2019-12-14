@@ -47,7 +47,7 @@ namespace Jogo.Controllers
         // GET: Jogador/Create
         public IActionResult Create()
         {
-            ViewData["NacionalidadeId"] = new SelectList(_context.Set<Nacionalidade>(), "NacionalidadeId", "NacionalidadeId");
+            ViewData["NacionalidadeId"] = new SelectList(_context.Set<Nacionalidade>(), "NacionalidadeId", "Nome");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace Jogo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NacionalidadeId"] = new SelectList(_context.Set<Nacionalidade>(), "NacionalidadeId", "NacionalidadeId", jogador.NacionalidadeId);
+            ViewData["NacionalidadeId"] = new SelectList(_context.Set<Nacionalidade>(), "NacionalidadeId", "Nome", jogador.NacionalidadeId);
             return View(jogador);
         }
 
@@ -81,7 +81,7 @@ namespace Jogo.Controllers
             {
                 return NotFound();
             }
-            ViewData["NacionalidadeId"] = new SelectList(_context.Set<Nacionalidade>(), "NacionalidadeId", "NacionalidadeId", jogador.NacionalidadeId);
+            ViewData["NacionalidadeId"] = new SelectList(_context.Set<Nacionalidade>(), "NacionalidadeId", "Nome", jogador.NacionalidadeId);
             return View(jogador);
         }
 
@@ -117,7 +117,7 @@ namespace Jogo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NacionalidadeId"] = new SelectList(_context.Set<Nacionalidade>(), "NacionalidadeId", "NacionalidadeId", jogador.NacionalidadeId);
+            ViewData["NacionalidadeId"] = new SelectList(_context.Set<Nacionalidade>(), "NacionalidadeId", "Nome", jogador.NacionalidadeId);
             return View(jogador);
         }
 

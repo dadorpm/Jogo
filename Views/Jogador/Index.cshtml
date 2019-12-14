@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Lista de Jogadores</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Novo Jogador</a>
 </p>
 <table class="table">
     <thead>
@@ -35,12 +35,12 @@
                 @Html.DisplayFor(modelItem => item.Idade)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Nacionalidade.NacionalidadeId)
+                @Html.DisplayFor(modelItem => item.Nacionalidade.Nome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.JogadorId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.JogadorId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.JogadorId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.JogadorId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.JogadorId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.JogadorId">Excluir</a>
             </td>
         </tr>
 }
