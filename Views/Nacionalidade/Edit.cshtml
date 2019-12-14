@@ -1,13 +1,12 @@
 ﻿@model Jogo.Models.Nacionalidade
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Nacionalidade";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<h1>Editar Nacionalidade</h1>
 
-<h4>Nacionalidade</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,15 +19,14 @@
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-danger">Cancelar</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

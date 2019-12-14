@@ -14,7 +14,7 @@ namespace Jogo.Data
         {
         }
         public DbSet<Jogo.Models.Jogador> Jogador { get; set; }
-        public DbSet<Jogo.Models.Placar> Placar { get; set; }
         public DbSet<Jogo.Models.Nacionalidade> Nacionalidade { get; set; }
+        public DbSet<Jogo.Models.Placar> Placar { get; set; }
     }
 }

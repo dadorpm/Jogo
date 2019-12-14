@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -47,7 +48,7 @@ namespace Jogo.Controllers
         // GET: Placar/Create
         public IActionResult Create()
         {
-            ViewData["JogadorId"] = new SelectList(_context.Jogador, "JogadorId", "JogadorId");
+            ViewData["JogadorId"] = new SelectList(_context.Jogador, "JogadorId", "Nome");
             return View();
         }
 
@@ -64,7 +65,7 @@ namespace Jogo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["JogadorId"] = new SelectList(_context.Jogador, "JogadorId", "JogadorId", placar.JogadorId);
+            ViewData["JogadorId"] = new SelectList(_context.Jogador, "JogadorId", "Nome", placar.JogadorId);
             return View(placar);
         }
 
@@ -81,7 +82,7 @@ namespace Jogo.Controllers
             {
                 return NotFound();
             }
-            ViewData["JogadorId"] = new SelectList(_context.Jogador, "JogadorId", "JogadorId", placar.JogadorId);
+            ViewData["JogadorId"] = new SelectList(_context.Jogador, "JogadorId", "Nome", placar.JogadorId);
             return View(placar);
         }
 
@@ -117,7 +118,7 @@ namespace Jogo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["JogadorId"] = new SelectList(_context.Jogador, "JogadorId", "JogadorId", placar.JogadorId);
+            ViewData["JogadorId"] = new SelectList(_context.Jogador, "JogadorId", "Nome", placar.JogadorId);
             return View(placar);
         }
 

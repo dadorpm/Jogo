@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<Jogo.Models.Placar>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Ranking";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Ranking de Jogadores</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Novo Placar</a>
 </p>
 <table class="table">
     <thead>
@@ -29,7 +29,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Jogador.JogadorId)
+                @Html.DisplayFor(modelItem => item.Jogador.Nome)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Pontos)
@@ -38,9 +38,9 @@
                 @Html.DisplayFor(modelItem => item.Data)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PlacarId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PlacarId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PlacarId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.PlacarId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.PlacarId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.PlacarId">Exluir</a>
             </td>
         </tr>
 }
